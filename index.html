@@ -3,215 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Program</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./index.css">
+    <title>DevFit Pro 2026 | نظام المهندس الشامل</title>
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="./icon.webp">
-    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-    <meta name="theme-color" content="#ff6b6b">
+    <meta name="apple-mobile-web-app-status-bar" content="#0f172a">
+    <meta name="theme-color" content="#22c55e">
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+
+<div class="container">
     <header>
-        <div class="container">
-            <h1><i class="fas fa-dumbbell"></i> برنامج تدريبي لثلاثة أيام في الأسبوع</h1>
-            <p>برنامج شامل لجميع العضلات مع جولتين لكل تمرين</p>
+        <h1>DevFit Pro 2026 v3.0</h1>
+        <p>نظام التدريب الذكي - متعدد البرامج التدريبية</p>
+        <div class="header-controls">
+            <button onclick="increaseDifficulty()" class="btn-increase">زيادة الصعوبة</button>
         </div>
     </header>
-    
-    <div class="container">
-        <section class="intro">
-            <h2>مقدمة عن البرنامج</h2>
-            <p>هذا البرنامج مصمم خصيصاً للاعبي كمال الأجسام المبتدئين والمتوسطين الذين يرغبون في الحفاظ على لياقتهم وزيادة نمو العضلات. البرنامج يتكون من ثلاثة أيام تدريبية في الأسبوع، مع يوم راحة بين كل يوم تدريب.</p>
-            <p>كل تمرين في هذا البرنامج يتكون من جولتين فقط، مما يجعله مثالياً لمن يملك وقتاً محدوداً أو يفضل التدريب المكثف في وقت قصير.</p>
-            
-            <div class="sets-info">
-                <button class="sets-toggle" id="setsToggle">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>تغيير عدد الجولات إلى 3</span>
-                </button>
-                <span>عدد الجولات الحالي: <span id="currentSets">2</span> جولة لكل تمرين</span>
-            </div>
-        </section>
-        
-        <div class="days-container">
-            <!-- Day 1 -->
-            <div class="day-card">
-                <div class="day-header">
-                    <h2><i class="fas fa-heartbeat"></i> اليوم الأول: الصدر والظهر</h2>
-                </div>
-                <div class="exercise-list">
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-fire"></i> تمرين البنش برس (الصدر)</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-dumbbell"></i> تمرين الصدر بالدامبلز</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-link"></i> تمرين كابل كروس أوفر</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 12-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-arrow-up"></i> تمرين السحب العلوي (الظهر)</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-weight-hanging"></i> تمرين الصف بالبار</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-dumbbell"></i> تمرين الصف بالدامبلز</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Day 2 -->
-            <div class="day-card">
-                <div class="day-header">
-                    <h2><i class="fas fa-running"></i> اليوم الثاني: الأرجل والكتفين</h2>
-                </div>
-                <div class="exercise-list">
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-weight-hanging"></i> تمرين القرفصاء (السكوات)</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-shoe-prints"></i> تمرين ضغط الأرجل</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-walking"></i> تمرين تمديد الأرجل</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 12-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-mountain"></i> تمرين الضغط العسكري (الكتفين)</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-arrows-alt-h"></i> تمرين رفع الأجنحة بالدامبلز</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-arrows-alt-v"></i> تمرين الرفع الجانبي</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 12-15</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Day 3 -->
-            <div class="day-card">
-                <div class="day-header">
-                    <h2><i class="fas fa-hand-rock"></i> اليوم الثالث: الذراعين والبطن</h2>
-                </div>
-                <div class="exercise-list">
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-dumbbell"></i> تمرين العضلة ذات الرأسين بالبار</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-dumbbell"></i> تمرين العضلة ذات الرأسين بالدامبلز</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-compress-arrows-alt"></i> تمرين الضغط للعضلة ثلاثية الرؤوس</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 8-12</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-expand-arrows-alt"></i> تمرين تمديد الذراعين للعضلة ثلاثية الرؤوس</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 10-15</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-user"></i> تمرين طحن البطن</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 15-20</span>
-                        </div>
-                    </div>
-                    <div class="exercise">
-                        <div class="exercise-name"><i class="fas fa-walking"></i> تمرين رفع الأرجل</div>
-                        <div class="exercise-details">
-                            <span class="sets"><i class="fas fa-redo"></i> الجولات: <span class="sets-count">2</span></span>
-                            <span class="reps"><i class="fas fa-repeat"></i> التكرارات: 15-20</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="motivation">
-            <i class="fas fa-trophy"></i>
-            <h3>لا تتوقف عندما تتألم، توقف عندما تنتهي!</h3>
-            <p>التدريب المنتظم هو مفتاح النجاح في بناء العضلات وتحسين اللياقة البدنية</p>
-        </div>
-        
-        <section class="note">
-            <h3>ملاحظات هامة</h3>
-            <p><i class="fas fa-check-circle"></i> يجب الإحماء لمدة 5-10 دقائق قبل البدء في التمارين.</p>
-            <p><i class="fas fa-check-circle"></i> الراحة بين الجولات: 60-90 ثانية.</p>
-            <p><i class="fas fa-check-circle"></i> الراحة بين التمارين: 90-120 ثانية.</p>
-            <p><i class="fas fa-check-circle"></i> احرص على التنفيذ الصحيح للتمارين لتجنب الإصابات.</p>
-            <p><i class="fas fa-check-circle"></i> استشر مدربًا محترفًا إذا كنت جديدًا في عالم كمال الأجسام.</p>
-            <p><i class="fas fa-check-circle"></i> التغذية السليمة والنوم الكافي عاملان أساسيان لتحقيق النتائج المرجوة.</p>
-        </section>
+
+    <div class="timer-container">
+        <div id="timer-display" style="font-size: 1.5rem; font-weight: bold;">20:00</div>
+        <button onclick="toggleTimer()" id="timer-btn" class="btn-add">ابدأ الـ Sprint</button>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>© 2025 برنامج تدريبي لثلاثة أيام في الأسبوع - جميع الحقوق محفوظة</p>
-            <p>صمم بحب للرياضة واللياقة البدنية</p>
+
+    <div class="stats-grid">
+        <div class="stat-box"><h4>المستوى الحالي</h4><p id="current-level">1</p></div>
+        <div class="stat-box"><h4>الجولات المنجزة</h4><p id="total-rounds">0</p></div>
+        <div class="stat-box"><h4>السعرات التقريبية</h4><p id="total-calories">0</p></div>
+        <div class="stat-box"><h4>أيام الالتزام</h4><p id="streak">1</p></div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-info">
+            <span>تقدم التدريب الحالي</span>
+            <span id="progress-percent">0%</span>
         </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="training-tabs" id="training-tabs">
+        <!-- Tabs will be generated by JavaScript -->
+    </div>
+
+    <div id="training-container">
+        <!-- Training lists will be generated by JavaScript -->
+    </div>
+
+    <div class="controls">
+        <button onclick="updateTrainingList()" class="btn-add">تحديث قائمة التدريب</button>
+        <button onclick="increaseDifficulty()" class="btn-increase">زيادة الصعوبة (جولات أكثر)</button>
+        <button onclick="resetTraining()" class="btn-reset">إعادة تعيين التمرين</button>
+        <button onclick="completeWorkout()" class="btn-done">إنهاء التمرين</button>
+    </div>
+
+    <div class="info-section">
+        <h2 style="text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">دليل تشغيل النظام (Documentation)</h2>
+        
+        <div class="info-card">
+            <h3>1. نظام التكرار والزيادة (Scaling Logic)</h3>
+            <p><strong>تطوير التمارين:</strong> إذا أنهيت العدات المطلوبة بسهولة لمدة أسبوعين، استخدم زر "زيادة الصعوبة" لزيادة الحمل التدريبي. هذا يضمن عدم ثبات المستوى (Plateau).</p>
+        </div>
+
+        <div class="info-card">
+            <h3>2. البرامج التدريبية المتعددة</h3>
+            <p>يوفر النظام ثلاثة برامج تدريبية منزلية:</p>
+            <ul>
+                <li><strong>مبتدئ:</strong> تمارين أساسية لبداية آمنة</li>
+                <li><strong>متوسط:</strong> زيادة في التكرارات والشدة</li>
+                <li><strong>متقدم:</strong> تمارين مركبة لتحقيق أقصى استفادة</li>
+            </ul>
+            <p>استخدم الأزرار العلوية للتبديل بين البرامج.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>3. آلية زيادة الصعوبة</h3>
+            <p>عند النقر على "زيادة الصعوبة":</p>
+            <ul>
+                <li>زيادة عدد التكرارات لكل تمرين بنسبة 10-20%</li>
+                <li>إضافة جولة إضافية للمستوى المتقدم</li>
+                <li>زيادة وقت التمرين الكلي</li>
+                <li>تعديل مستوى الصعوبة تلقائياً</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>4. الأسئلة الشائعة (FAQ)</h3>
+            <p><strong>س: كيف أختار البرنامج المناسب؟</strong><br> ج: ابدأ بالمبتدئ لمدة أسبوع، ثم انتقل للمتوسط عندما تشعر بالراحة.</p>
+            <p><strong>س: كم يوماً في الأسبوع؟</strong><br> ج: ابدأ بـ 3 أيام "Sprints" قوية، ويومين مشي خفيف.</p>
+            <p><strong>س: متى أزيد الصعوبة؟</strong><br> ج: عندما تشعر أن التمرين أصبح سهلاً، أو بعد أسبوعين من نفس المستوى.</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; color: #64748b;">
+        <p>© 2026 DevFit System - نظام التدريب المنزلي للمهندسين</p>
     </footer>
+</div>
 
     <script src="./app.js"></script>
 </body>
